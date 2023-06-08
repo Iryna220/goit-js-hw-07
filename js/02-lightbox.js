@@ -14,10 +14,9 @@ const markup = galleryItems.map(({ preview, original, description }) =>
 )
 galleryContainer.insertAdjacentHTML('beforeend', markup.join(" "));
 
-galleryContainer.addEventListener('click', onClick);
-
-
-
-
-//var lightbox = $('.gallery a').simpleLightbox({ /* options */ });
-console.log(galleryItems);
+let lightbox = new SimpleLightbox('.gallery a', {
+  captionData: "alt",
+  captionPosition :'bottom',
+  captionDelay :250
+});
+console.log(lightbox);
