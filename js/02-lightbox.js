@@ -6,7 +6,6 @@ const markup = galleryItems.map(({ preview, original, description }) =>
     <img
       class="gallery__image"
       src= ${preview}
-      data-source= ${original}
       alt= ${description}
     />
   </a>
@@ -14,7 +13,4 @@ const markup = galleryItems.map(({ preview, original, description }) =>
 )
 galleryContainer.insertAdjacentHTML('beforeend', markup.join(" "));
 
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionData: "alt",
-  captionDelay : 250,
-});
+new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250, })
